@@ -1,0 +1,30 @@
+<section class="bg-neutral-900  min-h-lvh flex items-center justify-around relative py-10">
+  <div class="image w-full h-full absolute top-0 left-0">
+    <img src="{{details.image}}" alt="image" class="object-cover" >
+  </div>
+  <div class="text absolute bg-neutral-900/75 rounded-2xl w-10/12 md:w-1/2 pt-4 pb-20 px-10 ">
+      <h3 class="main-font main-text-color text-sm md:text-3xl my-4">{{details.name}}</h3>
+      <div>
+        <div>
+          <span class="text-xs md:text-sm main-text-color me-6 font-bold">Rating: ({{details.rating}})</span>
+          <span >
+            <i class="fa-solid fa-star text-gold" [ngClass]="{'opacity-0': details.rating < 1}"></i>
+            <i class="fa-solid fa-star text-gold" [ngClass]="{'opacity-0': details.rating < 2}"></i>
+            <i class="fa-solid fa-star text-gold" [ngClass]="{'opacity-0': details.rating < 3}"></i>
+            <i class="fa-solid fa-star text-gold" [ngClass]="{'opacity-0': details.rating < 4}"></i>
+            <i class="fa-solid fa-star text-gold" [ngClass]="{'opacity-0': details.rating < 4.8}"></i>
+          </span>
+        </div>
+        <p class="text-xs md:text-sm main-text-color font-bold my-2">mealType: <span class="text-neutral-400 ms-9">{{details.mealType}}</span> </p>
+        <p class="text-xs md:text-sm main-text-color font-bold my-2">prepTimeMinutes: <span class="text-neutral-400 ms-5">{{details.prepTimeMinutes}}</span> </p>
+        <p class="text-xs md:text-sm main-text-color font-bold my-2">cuisine: <span class="text-neutral-400 ms-2">{{details.cuisine}}</span> </p>
+        <p class="text-xs md:text-sm main-text-color font-bold my-2">ingredients: <span class="text-neutral-400 ms-2">{{details.ingredients}}</span> </p>
+        <p class="text-xs md:text-sm main-text-color font-bold my-2">instructions: <span class="text-neutral-400 ms-2">{{details.instructions}}</span> </p>
+        <p class="text-xs md:text-sm main-text-color font-bold my-2">difficulty: <span class="text-gold ms-5">{{details.difficulty}}</span> </p>
+        <p class="text-xs md:text-sm main-text-color font-bold my-2">reviewCount: <span class="text-gold ms-5">{{details.reviewCount}}</span> </p>
+      </div>
+      <div>
+
+      </div>
+  </div>
+</section>

@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Homemade+Apple&family=Playwrite+IN:wght@100..400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --main-font:"Playwrite IN";
+  --asst-font:"Homemade Apple";
+  --text-font:"Crimson Text";
+  --bg-main:rgb(124, 108, 80) ;
+  --bg-asst:#d3c8acfb ;
+  --main-text-color:rgb(124, 108, 80) ;
+  --main-text2-color:rgb(192, 157, 97) ;
+  --bg-gold:goldenrod;
+  --text-gold:goldenrod ;
+}
+
+.main-font{
+  font-family: var(--main-font);
+}
+.asst-font{
+  font-family: var(--asst-font) ;
+}
+.text-font{
+  font-family: var(--text-font);
+}
+.bg-main{
+  background-color: var(--bg-main);
+}
+.bg-asst{
+  background-color: var(--bg-asst);
+}
+.main-text-color{
+  color: var(--main-text-color);
+}
+.main-text2-color{
+  color: var(--main-text2-color);
+}
+.bg-gold{
+  background-color: var(--bg-gold);
+}
+.text-gold{
+  color: var(--text-gold);
+}
+
+
+

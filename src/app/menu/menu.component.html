@@ -1,0 +1,46 @@
+@if(list.length > 0) {
+  <div class="bg-neutral-900 min-h-lvh py-6 md:py-12">
+    <!-- start  head  -->
+    <section class="py-8 md:py-12 px-20 md:px-40 bg-main w-1/3">
+      <h2 class="text-white text-xl md:text-3xl main-font"> Meals </h2>
+    </section>
+    <!-- end  head  -->
+
+    <!-- start container -->
+    <section class="flex items-center flex-col">
+      @for (l of list; track l.id) {
+      <article  class="cart relative py-3 px-5 bg-neutral-800 w-11/12  mt-5 rounded-md flex justify-between items-center cursor-pointer hover:bg-neutral-700">
+        <i class="save text-2xl main-text2-color absolute top-0 end-0 m-3 fa-regular fa-bookmark" (click)="addBookToFavorite(l)"></i>
+        @if(find(l)){
+          <i class="save text-2xl main-text2-color absolute top-0 end-0 mt-3 mx-3 fa-solid fa-bookmark" (click)="removeBookToFavorite(l)"></i>
+        }
+        <div [routerLink]="['/list', l.id]" class="w-4/12 md:w-3/12 ms-2">
+          <img src="{{l.image}}" alt="image" class="object-cover rounded-md" loading="lazy">
+        </div>
+        <div  [routerLink]="['/list', l.id]" class="w-7/12 md:w-7/12 ">
+          <h3 class="main-font main-text2-color text-sm md:text-3xl my-4">{{l.name}}</h3>
+          <div>
+            <div>
+              <span class="text-xs md:text-sm main-text2-color me-6 font-bold">Rating: ({{l.rating}})</span>
+              <span >
+                <i class="fa-solid fa-star text-gold" [ngClass]="{'opacity-0': l.rating < 1}"></i>
+                <i class="fa-solid fa-star text-gold" [ngClass]="{'opacity-0': l.rating < 2}"></i>
+                <i class="fa-solid fa-star text-gold" [ngClass]="{'opacity-0': l.rating < 3}"></i>
+                <i class="fa-solid fa-star text-gold" [ngClass]="{'opacity-0': l.rating < 4}"></i>
+                <i class="fa-solid fa-star text-gold" [ngClass]="{'opacity-0': l.rating < 4.8}"></i>
+              </span>
+            </div>
+            <p class="text-xs md:text-sm main-text2-color font-bold my-2">mealType: <span class="text-neutral-300 ms-9">{{l.mealType}}</span> </p>
+            <p class="text-xs md:text-sm main-text2-color font-bold my-2">prepTimeMinutes: <span class="text-neutral-300 ms-5">{{l.prepTimeMinutes}}</span> </p>
+            <p class="text-xs md:text-sm main-text2-color font-bold my-2">cuisine: <span class="text-neutral-300 ms-5">{{l.cuisine}}</span> </p>
+          </div>
+        </div>
+      </article>
+    }
+  </section>
+  <!-- end container -->
+</div>
+}
+@else {
+  <app-loading></app-loading>
+}

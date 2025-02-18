@@ -1,0 +1,138 @@
+<!-- start header -->
+<header class=" w-full flex items-center justify-center">
+    <div class="container hidden sm:block text-font text-gold w-9/12 h-full flex items-center justify-center z-20 bg-main bg-opacity-10">
+      <div class="h-full w-full flex items-center justify-center z-20 bg-neutral-900/90">
+        <h1 class="lg:text-6xl md:text-3xl text-2xl z-30 rotate-0">LAWRENCE</h1>
+      </div>
+    </div>
+    <div class="block sm:hidden text-font text-gold w-9/12 h-full flex items-center justify-center z-20">
+      <div class="h-full w-full flex items-center justify-center z-20 ">
+        <h1 class="text-3xl font-bold z-30">LAWRENCE</h1>
+      </div>
+
+  </div>
+</header>
+<!-- end header -->
+
+<!-- start main content -->
+
+<!-- start menu -->
+<section class=" bg-neutral-900 py-10">
+  <div class="flex flex-wrap">
+    <div class="flex items-center justify-center w-full md:w-2/4 p-7 text-cente">
+      <div class="flex items-center justify-center flex-col text-center w-9/12 h-9/12">
+        <h2 class="text-font text-5xl py-4 mb-4 font-light text-gold">Made With Love. <br/> Simply Delicious</h2>
+        <p class="text-gray-500 mb-9">
+          I'm a paragraph. Click here to add your own text and edit me.
+          I’m a great place for you to tell a story and let your users know a little more about you.
+        </p>
+        <button routerLink="/list" type="button" class="text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 shadow-lg shadow-yellow-500/50 dark:shadow-lg font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">View List</button>
+      </div>
+    </div>
+    <div class="flex items-center justify-center w-full md:w-2/4 p-7 text-center hidden md:block">
+      <div class="w-8/12 h-4/6">
+        <img class="object-cover rounded-2xl" src="../../../asset/images/h1.avif" alt="image" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end  menu -->
+
+<!-- start fresh -->
+<section class="fresh py-28">
+  <div class="flex items-center justify-center  w-full h-9/12">
+    <div class="flex items-center justify-center flex-col text-center p-6 w-6/12 h-9/12 bg-neutral-900 rounded-md">
+      <h2 class="asst-font text-2xl md:text-5xl lh-lg py-4 mb-4 font-light text-gold">A Fresh and <br/> Seasonal Cuisine</h2>
+      <p class="text-gray-500 mb-9">
+        I'm a paragraph. Click here to add your own text and edit me.
+        I’m a great place for you to tell a story and let your users know a little more about you.
+      </p>
+      <button routerLink="/about" type="button" class="text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 shadow-lg shadow-yellow-500/50 dark:shadow-lg font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">About lewrence</button>
+    </div>
+  </div>
+</section>
+<!-- end fresh -->
+
+<!-- start carousel -->
+<section class="py-3 bg-neutral-900 block lg:hidden">
+  <marquee behavior="scroll" direction="right" scrollamount="20" scrolldelay="0" loop="infinite">
+
+    <div class="flex items-center justify-center w-full h-64 bg-black">
+      @for (m of menu; track m.id)
+      {
+        @if (m.id <= 3) {
+          <div class="carousel flex-grow h-full cursor-pointer mx-3 ">
+            <img src="{{m.image}}" class="w-full h-full rounded-md" alt="image" loading="lazy">
+          </div>
+        }
+      }
+    </div>
+  </marquee>
+</section>
+<section class="py-3 bg-neutral-900 hidden lg:block">
+  <marquee behavior="scroll" direction="right" scrollamount="10" scrolldelay="100" loop="infinite">
+
+    <div class="flex items-center justify-center w-full h-64 bg-black">
+      @for (m of menu; track m.id)
+      {
+        @if (m.id <= 10) {
+          <div class="carousel flex-grow h-full cursor-pointer mx-1 ">
+            <img src="{{m.image}}" class="w-full h-full rounded-md" alt="">
+          </div>
+        }
+      }
+    </div>
+  </marquee>
+</section>
+<!-- end carousel -->
+
+<!-- start Reserve -->
+<section class="reserve py-20 px-5 bg-asst text-center">
+  <h3 class="text-font text-4xl md:text-5xl lh-lg py-4 mb-4 font-light">Reserve a Table</h3>
+  <p>Select your details and we’ll try to get the best seats for you.</p>
+  <form class="flex flex-wrap items-center justify-center w-10/12 m-auto mt-8 py-6">
+    <div class="text-start w-full md:w-2/12 m-2">
+      <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 ">Party size</label>
+      <select id="countries" class="bg-asst border border-gray-300 text-gray-900 text-sm rounded-sm cursor-pointer focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5">
+        <option value="1" selected>1 Guest</option>
+        <option value="2">2 Guest</option>
+        <option value="3">3 Guest</option>
+        <option value="4">4 Guest</option>
+        <option value="5">5 Guest</option>
+      </select>
+    </div>
+    <div class="text-start w-full md:w-1/4 m-2">
+      <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 ">Date</label>
+      <input type="date" class="bg-asst border border-gray-300 text-gray-900 text-sm rounded-sm cursor-pointer focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5">
+    </div>
+    <div class="text-start w-full md:w-1/4 m-2">
+      <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 ">Time</label>
+      <select id="countries" class="bg-asst border border-gray-300 text-gray-900 text-sm rounded-sm cursor-pointer focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5">
+        <option value="1" selected>1:00 PM</option>
+        <option value="2">2:00 PM</option>
+        <option value="3">3:00 PM</option>
+        <option value="4">4:00 PM</option>
+        <option value="5">5:00 PM</option>
+        <option value="6">6:00 PM</option>
+        <option value="7">7:00 PM</option>
+        <option value="8">8:00 PM</option>
+        <option value="9">9:00 PM</option>
+        <option value="10">10:00 PM</option>
+        <option value="11">11:00 PM</option>
+        <option value="12">12:00 PM</option>
+      </select>
+    </div>
+    <div class="text-start w-full md:w-1/4 m-2 pt-8">
+      <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-yellow-600 to-yellow-500 group-hover:from-yellow-600 group-hover:to-yellow-500 hover:text-yellow-700 focus:ring-4 focus:outline-none focus:ring-yellow-300">
+        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-asst rounded-md group-hover:bg-opacity-0">
+          Find a Table
+        </span>
+        </button>
+    </div>
+  </form>
+</section>
+<!-- end  Reserve -->
+
+<!-- end  main  content  -->
+
+<app-footer></app-footer>

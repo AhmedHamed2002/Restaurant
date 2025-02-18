@@ -1,0 +1,19 @@
+.cart{
+  clip-path: polygon(2% 0, 80% 0%, 100% 0, 100% 92%, 98% 100%, 20% 100%, 0 100%, 0 8%);
+  transition-duration: 1.2s ;
+
+  img{
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  }
+
+  .save{
+    &:hover{
+      cursor: pointer;
+      color: goldenrod !important;
+      filter: drop-shadow(0 0 13px goldenrod);
+      transition: 1.2s;
+      transform: scale(0.95);
+    }
+  }
+}
+
